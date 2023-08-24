@@ -4,8 +4,8 @@ Stock Connector
 
 
 
-This module adds a possibility to connect to external service to read product data and make proper adjustments in odoo inventory.
-The addon requires OCA addon queue, can be loaded from https://github.com/OCA/queue
+This module allows connecting to an external service to read product data and make proper adjustments in odoo inventory.
+The addon requires OCA addon queue, which can be loaded from https://github.com/OCA/queue
 
 
 Configuration
@@ -19,7 +19,7 @@ Go to Settings > Scheduled actions > (Select cron 'Service - get product info') 
 Usage
 =====
 
-After service configuration addon will generate job's to update products list and state of which can be found in Job Queue
+After service configuration, the addon will generate jobs to update product list and state which can be found in the Job Queue
 
 Bug Tracker
 ===========
@@ -31,6 +31,6 @@ If you spotted it first, help us smashing it by providing a detailed and welcome
 Known issues / Roadmap
 ======================
 
-* check for TODO's in the code to complete implementation
+* check for TODO's in the code to complete the implementation
 * make multi-company safe
 * make multi-stock safe

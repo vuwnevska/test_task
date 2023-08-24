@@ -11,7 +11,6 @@
         "base_rest",
     ],
     "data": [
-        # "views/stock_service.xml",
+        "data/res_users_data.xml",
     ],
-    "demo": [],
 }

@@ -14,8 +14,13 @@ class StockService(Component):
         """
         Update inventory leftovers for product
         """
-
-        env = self.env(user=self.env.ref("base.user_admin"))
+        # user to encapsulate external calls
+        api_user = self.env.ref(
+            "stock_api.user_stock_service", raise_if_not_found=False
+        )
+        if not api_user:
+            return {"response": "PUT method failed missing user."}
+        env = self.env(user=api_user)
         product = env["product.product"].search(
             [("barcode", "=", params["sku"])], limit=1
         )
@@ -24,7 +29,7 @@ class StockService(Component):
             env["stock.quant"]._update_available_quantity(
                 product, stock_location, params["qty"]
             )
-            return {"response": "PUT called update {} ".format(product.id)}
+            return {"response": "PUT called update {} ".format(product.name)}
         return {
             "response": "PUT inventory update failed for sku {} ".format(params["sku"])
         }

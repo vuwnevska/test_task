@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- <data noupdate="1"> -->
+
+        <record model="res.partner" id="partner_stock_service">
+            <field name="name">Stock Service</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="email">some@example.com</field>
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="user_stock_service" model="res.users">
+            <field name="login">foo</field>
+            <field name="password">bar</field>
+            <field name="partner_id" ref="partner_stock_service"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="groups_id" eval="[(4, ref('stock.group_stock_user'))]"/>
+            
+        </record>
+
+    <!-- </data> -->
+</odoo>
